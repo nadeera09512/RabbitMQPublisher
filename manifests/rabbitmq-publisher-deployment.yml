@@ -16,6 +16,7 @@ spec:
     spec:
       containers:
       - image: nadeera94/rabbitmqpublisher:v1.0
+        imagePullPolicy: Always
         name: rabbitmqpublisher
         ports:
         - containerPort: 8085
