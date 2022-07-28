@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: rabbitmq-publisher
+  name: rabbitmq-publisher
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rabbitmq-publisher
+  template:
+    metadata:
+      labels:
+        app: rabbitmq-publisher
+    spec:
+      containers:
+      - image: nadeera94/rabbitmqpublisher:v1.0
+        name: rabbitmqpublisher
+        ports:
+        - containerPort: 8085
+        
+      
